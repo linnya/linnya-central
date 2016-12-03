@@ -1,0 +1,166 @@
+<md-dialog class="partials modal">
+	<div class="title blue">
+		<h3>Create a Connection</h3>
+	</div>
+	<md-dialog-content>
+		<div class="stepper">
+			<div class="header" layout="row">
+				<div class="step" ng-click="currentStep = 1" ng-class="currentStep == 1 ? 'active' : ''" flex>
+					<p class="md-body-2 left"><span>1</span>What is a connection?</p>
+				</div>
+				<div class="step" ng-click="currentStep = 2" ng-class="currentStep == 2 ? 'active' : ''" flex>
+					<p class="md-body-2"><span>2</span>Choose a user</p>
+				</div>
+				<div class="step" ng-class="currentStep == 4 ? 'active' : ''" flex>
+					<p class="md-body-2 right"><span>3</span>Scan the code</p>
+				</div>
+			</div>
+			<div class="content">
+				<div ng-show="currentStep == 1" layout="row">
+					<div flex="50">
+						The connection allows the synchronization between <br>app users and this account. 
+						<br>
+						<br>
+						So, If you already have <b>downloaded the App</b> on your smartphone (<a href="#">Android</a> or <a href="#">iOS</a>), you just need to create a connection here to activate and validate the attendance.
+						<br>
+						<br>
+						<b>Important:</b> Linnya Network only counts the <i>active</i> connections. You will always be able to create <br>several <i>Users</i> without being charged for it.
+						<br>
+						<br>
+						<small>Don't have the app yet? Click on your store and get it for free!</small>
+						<br>
+						<br>
+							<md-button class="md-fab light-green" aria-label="Use Android">
+	          					<md-icon md-svg-src="assets/svg/android.svg"></md-icon>
+	        				</md-button>
+	        				<md-button class="md-fab light-green" aria-label="Use Android">
+	          					<md-icon md-svg-src="assets/svg/apple.svg"></md-icon>
+	        				</md-button>						
+					</div>
+					<div flex="5"></div>
+					<div flex>
+						<img src="assets/img/modal-ilustration.png" height="260px">
+					</div>
+				</div>
+				<div ng-show="currentStep == 2" layout="row">
+					<div flex="50">
+						Please, fill the blanks with information of the person<br>who you want to add as an agent. Note that you can<br>also use your own information. 
+						<br>
+						<br>
+						This is what allow the app to work with <b>multiple agents</b> naturally.
+						<br>
+						<br>
+						Don't forget that new <b>users</b> can be freely created in its special <b>area at the side nav menu.</b>
+						<br>
+						<br>
+						<br>
+						<small>Visit our Help Center to know more about it.</small>
+						<br>
+						<br>
+						<!-- <md-button class="md-fab light-green" aria-label="Use Android">
+          					<md-icon md-svg-src="assets/svg/information-outline.svg"></md-icon>
+        				</md-button> -->
+						<br>
+					</div>
+					<div flex="5"></div>
+					<div flex ng-hide="vm.create">
+						<md-list class="md-dense fix-height">
+						  <md-subheader class="md-no-sticky">All active users</md-subheader>
+							<md-list-item class="md-3-line" ng-click="null">
+					          <img ng-src="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" class="md-avatar" />
+					          <div class="md-list-item-text" layout="column">
+					            <h3>asda</h3>
+					            <h4>sdssss</h4>
+					            <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
+					          </div>
+					        </md-list-item>
+					        <md-list-item class="md-3-line" ng-click="null">
+					          <img ng-src="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" class="md-avatar" />
+					          <div class="md-list-item-text" layout="column">
+					            <h3>asda</h3>
+					            <h4>sdssss</h4>
+					          </div>
+					        </md-list-item>
+					        <md-list-item class="md-3-line" ng-click="null">
+					          <img ng-src="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" class="md-avatar" />
+					          <div class="md-list-item-text" layout="column">
+					            <h3>asda</h3>
+					            <h4>sdssss</h4>
+					          </div>
+					        </md-list-item>
+						</md-list>
+						<md-button class="red right" ng-click="vm.create = true">Create New User</md-button>
+					</div>
+					<div flex ng-show="vm.create">
+						<form name="vm.form">
+							<md-input-container class="md-row" flex-gt-sm>
+							    <label>First Name</label>
+							    <input ng-model="vm.user.firstName" required>
+							</md-input-container>
+							<md-input-container class="md-row" flex-gt-sm>
+								<label>Last Name</label>
+								<input ng-model="vm.user.lastName" required>
+							</md-input-container>
+							<md-input-container class="md-block" flex-gt-sm>
+								<label>Role / Position (Ex.: Designer, Support, Sales...)</label>
+								<input ng-model="vm.user.role">
+							</md-input-container>
+							<md-input-container class="md-block" required>
+						        <label>E-mail Address</label>
+						        <input required type="email" ng-model="vm.user.email"/>
+						        <div ng-messages="projectForm.clientEmail.$error" role="alert">
+						          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+						            The code will be send to this address. Be sure that it's correct.
+						          </div>
+						        </div>
+					      	</md-input-container>
+							<md-button ng-click="vm.create = false">Cancel</md-button>
+							<md-button class="blue">Create User</md-button>
+
+				      	</form>
+					</div>
+				</div>
+				<div ng-show="currentStep == 3">
+					STEP3
+					<br>
+					Lorem ipsum dolor sit amet, consectetur adipisicing
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+				</div>
+				<div ng-show="currentStep == 4" layout="row">
+					<div class="qrcode" flex>
+						<img src="http://chart.apis.google.com/chart?cht=qr&chl={{accid}};{{qrcode}}&chs=240x240" alt="Connection - QR code"/>
+						<small>Scan the code above with Linnya Network app. If you don't have the app already, please, click here.</small>
+						<br>
+						<md-button ng-click="connections.$remove($index)" ng-href="#/connections/empty" class="blue">Sent to email</md-button>
+						<br>
+					</div>
+					<div class="qrcode" flex></div>
+				</div>
+			</div>
+		</div>
+	</md-dialog-content>
+	<md-dialog-actions layout="row">
+	  <span flex></span>
+	  <md-button ng-hide="currentStep == 4">
+	   Cancel
+	  </md-button>
+	  <md-button class="blue" ng-show="currentStep == 4">
+	   Finish
+	  </md-button>
+	  <md-button ng-click="currentStep = currentStep + 1" ng-show="currentStep == 1" class="blue">
+	    Next
+	  </md-button>
+	  <md-button ng-click="vm.generateQR(vm.user)" ng-class="vm.form.$invalid ? 'disabled': ''" ng-disabled="vm.form.$invalid" ng-show="currentStep == 2" class="blue">
+	    Generate QrCode
+	  </md-button>
+	</md-dialog-actions>
+</md-dialog>

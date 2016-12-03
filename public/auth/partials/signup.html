@@ -1,0 +1,72 @@
+<div class="partials signup">
+	
+	<div class="content md-whiteframe-z1">
+			<div layout="row">
+				<div class="slide blue" flex>
+					<br>
+					<br>
+					<br>
+					<h2>Prefe a more <br>personal demo</h2>
+					<small>Sed do eiusmodtempor incididunt ut labore et dolore magna aliqua consequat.</small>
+					<h3>Lorem <b>ipsum</b> dolor sit amet, consectetur <b>adipisicing</b> elit,sed do eiusmod
+					tempor incididunt ut  <b>labore</b> et dolore magna aliqua.</h3>
+					<br>
+					<md-button>Red More</md-button>
+				</div>
+
+				<form name="vm.form.signup" flex>
+				<h2>Signup</h2>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<br>
+					<div class="form-row" layout="row"> 
+						<md-input-container flex>
+							<label>First Name</label>
+							<input ng-model="vm.user.firstName" required>
+						</md-input-container>
+						<md-input-container flex>
+							<label>Last Name</label>
+							<input ng-model="vm.user.lastName" required>
+						</md-input-container>
+					</div>
+					<div class="form-row" layout="row"> 
+						<md-input-container flex>
+							<label>Email</label>
+							<input type="email" ng-model="vm.user.email" required>
+						</md-input-container>
+						<md-input-container flex>
+							<label>Website</label>
+							<input ng-model="vm.user.website" required>
+						</md-input-container>
+					</div>
+					<div class="form-row" layout="row"> 
+						<md-input-container flex>
+							<label>Password</label>
+							<input type="password" ng-model="vm.user.password" required>
+							<!-- <input type="password" pattern=".{6,20}" ng-model="vm.user.password" required> -->
+						</md-input-container>
+						<md-input-container flex>
+							<label>Repeat Password</label>
+							<input type="password" ng-model="vm.user.password2" required>
+						</md-input-container>
+						<div flex="20">
+							<password-strength target="vm.user.password"></password-strength>
+						</div>
+					</div>
+					<div class="form-row" layout="row">
+						 <md-checkbox flex="10" ng-model="vm.user.agree" aria-label="Agree terms" required></md-checkbox>
+						 <p flex>I agree to Linnya Network <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+					</div>
+					<br>
+					<div class="form-row" layout="row">
+						<md-button class="blue" ng-click="vm.send(vm.user)">Register</md-button>
+					</div>
+				</form>
+		</div>
+	</div>
+	<footer>
+		<a class="opt ng-scope" href="/#/signin">Already have an account? Sign in now!</a>
+		<div class="copy">
+	    	<p class="grey-text text-darken-2"> <small>©2015 Linnya Technology, Inc.  | All right reserved</small></p>    
+	  	</div>
+	</footer>
+</div>

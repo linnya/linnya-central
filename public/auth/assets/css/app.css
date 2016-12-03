@@ -1,0 +1,274 @@
+body{
+	background: #f7f7f7;
+}
+.wrap{
+	box-sizing: border-box;
+	height: 100%;
+	overflow: auto;
+	background: #f7f7f7;
+	width: 100%;
+}
+.partials.signup .content{
+	margin-bottom: 0 !important;
+	position: relative;
+	width: 800px;
+	box-sizing: border-box;
+	background: white;
+	display: block;
+	margin: 4% auto;
+}
+.partials .content form{
+	padding: 16px;
+}
+.partials .content form input{
+	font-size: 13px;
+}
+.partials .content form label{
+	font-size: 14px;
+}
+.partials.signup .content h2{
+	color: #0D47A1;
+	margin: 0px;
+	font-weight: 300;
+}
+.partials .content p{
+	font-size: 13px;
+	color: #424242;
+}
+.partials.signup .form-row md-input-container{
+	margin: 8px 0;
+}
+.partials.signup .form-row md-checkbox{
+	margin: 0;
+}
+.partials .form-row a{
+	color: #2196F3;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.partials .content form .md-button{
+	margin: 0px;
+	width: 100%;
+}
+.partials.signup .content .slide{
+	color: white;
+}
+.partials.signup .content .slide h2{
+	color: white;
+	font-weight: 300;
+	text-align: center;
+}
+.partials.signup .content .slide small{
+	color: white;
+	text-align: center;
+	width: 70%;
+	display: block;
+	margin: 16px auto;
+	font-weight: 300;
+}
+.partials.signup .content .slide h3{
+	font-weight: 300;
+	color: white;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+.partials.signup .content .slide h3 b{
+	font-weight: 400;
+}
+
+.partials.signup .content .slide p{
+	text-align: justify;
+    text-justify: inter-word;
+	width: 70%;
+	display: block;
+	margin: 0 auto;
+	font-style: 13px;
+}
+.partials.signup .content .slide .md-button{
+	background: white;
+	color: #212121;
+	display: block;
+	margin: 16px auto;
+}
+.partials.signin .content{
+	margin-bottom: 0 !important;
+	width: 400px;
+	background: white;
+	display: block;
+	margin: 4% auto;
+}
+.partials.signin .content form{
+	margin-top: 40px;
+}
+
+.partials.signin .content .avatar-area{
+	background: url(../img/signin.png) no-repeat center;
+	height: 64px;
+	position: relative;	
+	padding-top: 32px;
+}
+.partials.signin .content .avatar-area .avatar{
+	border: solid white 6px;
+	border-radius: 50%;
+	box-sizing: border-box;
+	margin: 0 auto;
+	display: block;
+}
+
+.partials.signin .content form md-input-container{
+	width: 100%;
+	margin: 8px 0;
+}
+.partials.signin .content  .opt{
+	margin: 24px 0;
+}
+.partials.signin .content  .opt p, .partials.signin .content  .opt a{
+	margin: 2px 0;
+}
+.partials.signin .content  .opt a.right{
+    text-align: right;
+}
+.partials.welcome{
+	height: 100%;
+	background: url('../img/sandiegonight.png') !important;
+	background-size: 100% 100%;
+}
+.partials.welcome .container{
+	text-align: center;
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+}
+.partials.welcome .box{
+	/*background:#ECEFF1;*/
+}
+.partials.welcome .content{
+	padding: 8px 32px;
+}
+.partials.welcome h2{
+	font-weight: 400;
+	margin: 0;
+	padding: 16px;
+	border-bottom: 1px solid #ccc;
+}
+.partials.welcome .callback{
+	color: #2196F3;
+}
+
+password-strength md-progress-linear{
+	margin-top: 20px;
+}
+password-strength md-progress-linear.bg-0 ._md-container{
+	background: #FFEBEE;
+}
+
+password-strength md-progress-linear.bg-33 ._md-container{
+	background: #FFEBEE;
+}
+password-strength md-progress-linear.bg-33 ._md-bar{
+	background: #F44336;
+}
+
+password-strength md-progress-linear.bg-66 ._md-container{
+	background: #FFFDE7;
+}
+password-strength md-progress-linear.bg-66 ._md-bar{
+	background: #FDD835;
+}
+
+password-strength md-progress-linear.bg-100 ._md-container{
+	background: #E8F5E9;
+}
+password-strength md-progress-linear.bg-100 ._md-bar{
+	background: #4CAF50;
+}
+/*COLORS*/
+.blue.lighten{
+	background: #B3E5FC;
+}
+.red.lighten{
+	background: #FFCDD2;
+}
+.purple.lighten{
+	background: #9C27B0;
+}
+.green.lighten{
+	background: #DCEDC8;
+}
+.blue{
+	background: #2196F3;
+}
+.yellow{
+	background: #FDD835;
+}
+.green{
+	background: #4CAF50;
+}
+.red{
+	background: #F44336;
+}
+footer{
+	margin-top: 16px;
+	margin-bottom: 6%;
+}
+footer a{
+	color: #2196F3;
+	text-decoration: none;
+}
+footer a, footer p{
+	font-size: 14px;
+	text-align: center;
+	display: block;
+}
+/*BUTTON COLORS*/
+.md-button.disabled[disabled]{
+	background-color: rgba(0,0,0,0.12) !important;
+	color: rgba(0,0,0,0.61) !important;
+}
+.md-button.disabled[disabled]:hover{
+	background-color: rgba(0,0,0,0.12) !important;
+}
+.md-button{
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 16px;
+	padding-right: 16px;
+
+}
+.md-button.blue{
+	color: white;
+	background-color: #2196F3 !important;
+}
+.md-button.blue:hover{
+	background-color: #1976D2 !important;
+}
+.md-button.light-green{
+	color: white;
+	background-color: #1DE9B6;
+}
+.md-button.light-green:hover{
+	background-color: #00BFA5 !important;
+}
+.md-button.yellow{
+	color: white;
+	background-color: #FDD835;
+}
+.md-button.yellow:hover{
+	background-color: #FBC02D !important;
+}
+.md-button.green{
+	color: white;
+	background-color: #4CAF50;
+}
+.md-button.green:hover{
+	background-color: #388E3C !important;
+}
+.md-button.red{
+	color: white;
+	background-color: #F44336;
+}
+.md-button.red:hover{
+	background-color: #D32F2F !important;
+}

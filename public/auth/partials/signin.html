@@ -1,0 +1,35 @@
+<div class="partials signin">
+	<div class="content md-whiteframe-z1">
+		<div class="avatar-area">
+			<img class="avatar md-whiteframe-z1" src="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" width="112px" height="112px">
+		</div>
+		<form name="vm.form.signin">
+			<div class="form-row">
+				<md-input-container>
+				  <label>Email</label>
+				  <input type="email" ng-model="vm.user.email" required>
+				</md-input-container>
+			</div>
+			<div class="form-row">
+				<md-input-container>
+				  <label>Password</label>
+				  <input type="password" pattern=".{6,20}" ng-model="vm.user.password" required>
+				</md-input-container>
+			</div>
+			<div class="form-row">
+				<md-button class="blue" ng-click="vm.send(vm.user)">Sign in</md-button>	
+			</div>
+			<div class="form-row opt" layout="row">
+				<md-checkbox flex="10" aria-label="remember your account" ng-model="vm.user.remember"></md-checkbox>
+		        <p flex="70">Stay signed in </p>
+		        <a flex class="right help" href="#/help">Need help?</a>
+			</div>
+		</form>
+	</div>
+	<footer>
+		<a class="opt ng-scope" href="#/signup">Create an account</a>
+		<div class="copy">
+	    	<p class="grey-text text-darken-2"> <small>©2015 Linnya Technology, Inc.  | All right reserved</small></p>    
+	  	</div>
+	</footer>
+</div>

@@ -1,0 +1,122 @@
+<div class="partials chat dashboard">
+	<div class="boxes" layout="row">
+		<div class="box" flex>
+			<md-content class="box-inner md-whiteframe-1dp">
+				<md-button class="md-fab green" aria-label="Eat cake">
+		            <md-icon md-svg-src="assets/svg/menu.svg"></md-icon>
+		        </md-button>
+		        <div class="right">
+		        	<h2>12</h2>
+		        	<p class="md-body-1">Chatting</p>
+		        </div>
+			</md-content>
+		</div>
+		<div class="box" flex>
+			<md-content class="box-inner md-whiteframe-1dp">
+				<md-button class="md-fab blue" aria-label="Eat cake">
+		            <md-icon md-svg-src="assets/svg/menu.svg"></md-icon>
+		        </md-button>
+		        <div class="right">
+		        	<h2>956</h2>
+		        	<p class="md-body-1">Visitors</p>
+		        </div>
+			</md-content>
+		</div>
+		<div class="box" flex>
+			<md-content class="box-inner md-whiteframe-1dp">
+				<md-button class="md-fab yellow" aria-label="Eat cake">
+		            <md-icon md-svg-src="assets/svg/menu.svg"></md-icon>
+		        </md-button>
+		        <div class="right">
+		        	<h2>5 min</h2>
+		        	<p class="md-body-1">Response Time</p>
+		        </div>
+			</md-content>
+		</div>
+		<div class="box" flex>
+			<md-content class="box-inner md-whiteframe-1dp">
+				<md-button class="md-fab red" aria-label="Eat cake">
+		            <md-icon md-svg-src="assets/svg/menu.svg"></md-icon>
+		        </md-button>
+		        <div class="right">
+		        	<h2>5210</h2>
+		        	<p class="md-body-1">Total Chats</p>
+		        </div>
+			</md-content>
+		</div>
+	</div>
+	<br>
+	<div class="boxes log-charts" layout="row">
+		<div class="box chart" flex="60">
+			<md-content class="md-whiteframe-1dp box-inner">
+				<div class="title">
+					<h3>Attendance number per visitor</h3>
+					<!-- <small>See how many people got engaged through the chat</small> -->
+				</div>
+				<img src="assets/img/chart.png" width="100%" height="90%">
+			</md-content>
+		</div>
+		<div class="box" flex>
+			<md-content class="md-whiteframe-1dp box-inner">
+				<div class="title">
+					<h3>Visitors by location <md-icon class="right" md-svg-src="assets/svg/dots-vertical.svg"></md-icon>
+					</h3>
+					<!-- <small>Main cities and locations your visitors come from</small> -->
+				</div>
+				<!-- exact table from live demo -->
+				<md-table-container>
+				  <table md-table md-progress="promise">
+				    <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+				      <tr md-row>
+				        <th md-column><span>Dessert (100g serving)</span></th>
+				        <th md-column md-numeric><span>Calories</span></th>
+				        <th md-column md-numeric>Fat (g)</th>
+				      </tr>
+				    </thead>
+				    <tbody md-body>
+				      <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="dessert in desserts.data">
+				        <td md-cell>{{dessert.name}}</td>
+				        <td md-cell>{{dessert.calories.value}}</td>
+				        <td md-cell>{{dessert.fat.value | number: 1}}</td>
+				      </tr>
+				    </tbody>
+				  </table>
+				</md-table-container>
+				<br>
+				<br>
+				<br>
+			</md-content>
+		</div>
+	</div>
+	<br>
+	<div class="boxes" layout="row">
+		<div class="box" flex>
+			<md-content class="md-whiteframe-1dp" flex>
+				<div class="title">
+					<h3>Activities</h3>
+				</div>
+				<div class="timeline">
+					<div class="line"></div>
+					<div class="timeline-block">
+		            	<div class="icon green">
+		            		<md-icon md-svg-src="assets/svg/account.svg"></md-icon>
+		            	</div>
+		            	<div class="timeline-content left">
+		            		<h3>Timeline Event One</h3>
+		            		<p>A new agente has been added, <a href="#">click here </a>for more information</p> 
+		            	</div>
+					</div>
+					<div class="timeline-block">
+		            	<div class="icon red">
+		            		<md-icon md-svg-src="assets/svg/account.svg"></md-icon>
+		            	</div>
+		            	<div class="timeline-content right">
+		            		<h3>Timeline Event One</h3>
+		            		<p>A new agente added, <a href="#">click here </a>for more information</p> 
+		            	</div>
+					</div>
+				</div>
+			</md-content>
+		</div>
+	</div>
+</div>

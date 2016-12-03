@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+<head>
+    <!-- Angular Material CSS using GitCDN to load directly from `bower-material/master` -->
+    <link rel="stylesheet" href="assets/css/angular-material.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <title ng-bind="'Linnya &mdash; ' + title"></title>
+  </head>
+  <body>
+
+    <!-- Angular Material Dependencies -->
+    <script src="assets/lib/angular.min.js"></script>
+    <script src="assets/lib/angular-animate.min.js"></script>
+    <script src="assets/lib/angular-aria.min.js"></script>
+    <script src="assets/lib/angular-route.min.js"></script>
+
+    <script src="assets/lib/password-strength-indicator.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.0.5/firebase.js"></script>
+
+    <!-- Angular Material Javascript using GitCDN to load directly from `bower-material/master` -->
+    <script src="assets/lib/angular-material.min.js"></script>
+    <script src="assets/js/angular-local-storage.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.routes.js"></script>
+    <script src="app.runconfig.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="controllers/invite.js"></script>
+    <script src="controllers/signin.js"></script>
+    <script src="controllers/signup.js"></script>
+
+    <!-- SERVICES -->
+    <script src="services/widgets.js"></script>
+
+
+    <div class="wrap" ng-view class="view-animate"></div>
+  
+  </body>
+
+</html>

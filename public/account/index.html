@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+<head>
+    <!-- Angular Material CSS using GitCDN to load directly from `bower-material/master` -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/md-data-table.min.css">
+    <link rel="stylesheet" href="assets/css/angular-chart.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,400italic,100,300,700,100italic,300italic,400' rel='stylesheet' type='text/css'>
+    <title ng-bind="'Linnya &mdash; ' + title"></title>
+  </head>
+  <body>
+    <!-- Angular Material Dependencies -->
+    <script src="assets/lib/angular.min.js"></script>
+    <script src="assets/lib/angular-animate.min.js"></script>
+    <script src="assets/lib/angular-aria.min.js"></script>
+    <script src="assets/lib/angular-route.min.js"></script>
+    <!-- Firebase -->
+    <script src="assets/lib/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="assets/lib/angularfire.min.js"></script>
+    <!-- Table -->
+    <script src="assets/lib/md-data-table.min.js"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <!-- charts -->
+    <script src="assets/lib/Chart.bundle.js"></script>
+    <script src="assets/lib/angular-chart.min.js"></script>
+    
+    <!-- Angular Material Javascript using GitCDN to load directly from `bower-material/master` -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.min.js"></script>
+    <script src="assets/js/angular-local-storage.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.routes.js"></script>
+    <script src="app.runconfig.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="controllers/header.js"></script>
+    <script src="controllers/chat.js"></script>
+    <script src="controllers/chat.dashboard.js"></script>
+    <script src="controllers/chat.connections.js"></script>
+    <script src="controllers/chat.analytics.js"></script>
+    <script src="controllers/chat.custom.js"></script>
+    <script src="controllers/users.js"></script>
+    <script src="controllers/payment.js"></script>
+    <script src="controllers/dashboard.js"></script>
+
+    <!-- SERVICES -->
+    <script src="services/widgets.js"></script>
+    <header ng-controller="header as vm">
+        <md-toolbar class="md-whiteframe-2dp">
+          <div class="md-toolbar-tools">
+            <img width="28px" src="https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png">
+            <h2>
+              <span>Linnya Network</span>
+            </h2>
+            <span flex></span>
+            <span class="name">Aston Teagan</span>
+            <md-menu style="margin:0 16px">
+              <md-icon md-svg-src="assets/svg/bell.svg" ng-click="$mdOpenMenu()" aria-label="Notifications">
+                <!-- <md-tooltip>Notifications</md-tooltip> -->
+              </md-icon>
+                <md-menu-content width="3" class="notifications">
+                    <h3>Notifications</h3>
+                  <md-list>
+                  <md-list-item class="md-3-line">
+                        <img ng-src="http://moltran.coderthemes.com/menu_2/assets/images/users/avatar-1.jpg" class="md-avatar blue" alt="{{item.who}}" />
+                        <div class="md-list-item-text">
+                          <h4>Min Li Chan <small class="right">13:40 PM</small></h4>
+                          <p>I'll be in your neighborhood doing errands</p>
+                        </div>
+                    </md-list-item>
+                    
+                    <md-list-item class="md-3-line">
+                        <img ng-src="http://moltran.coderthemes.com/menu_2/assets/images/users/avatar-4.jpg" class="md-avatar blue" alt="{{item.who}}" />
+                        <div class="md-list-item-text">
+                          <h4>Mel Skyler<small class="right">13:40 PM</small></h4>
+                          <p>I'll be in your neighborhood doing errands</p>
+                        </div>
+                    </md-list-item>
+                    
+                    <md-list-item class="md-3-line">
+                        <img ng-src="http://moltran.coderthemes.com/menu_2/assets/images/users/avatar-2.jpg" class="md-avatar blue" alt="{{item.who}}" />
+                        <div class="md-list-item-text">
+                          <h4>Alex Eddie<small class="right">13:40 PM</small></h4>
+                          <p>I'll be in your neighborhood doing errands</p>
+                        </div>
+                    </md-list-item>
+                    
+                    <p class="footer"><small><a href="#">View All</a></small></p>
+                  </md-list>
+                </md-menu-content>
+          </md-menu>
+            <md-menu>
+                <div ng-click="$mdOpenMenu()">
+                    <img class="avatar" src="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg"   width="32px">
+                </div>
+                <md-menu-content width="3">
+                    <md-menu-item>
+                      <md-button href="#/profile" ng-click="ctrl.redial($event)">
+                        Profile
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button href="#/settings" ng-click="ctrl.redial($event)">
+                        Settings
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                      <md-button ng-click="vm.logout()">
+                        Logout
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+          </div>
+        </md-toolbar>
+    </header>
+
+    <div class="wrap" layout="row">
+    <nav class="md-whiteframe-z2" ng-controller="header as vm">
+      <ul>
+        <li ng-repeat="menu in vm.menus" ng-class="vm.customClass($index)" ng-click="vm.active = $index">
+            <a ng-show="menu.href || menu.sub" class="md-body-2" ng-click="vm.closeNav()" ng-href="{{menu.href}}">
+                <md-icon md-svg-icon="assets/svg/{{menu.icon}}.svg"></md-icon>
+                <spam ng-bind="menu.title"></spam>
+                <div class="right icon" ng-show="menu.sub">
+                  <md-icon md-svg-src="assets/svg/chevron-down.svg"></md-icon>
+                </div>
+            </a>
+            <div ng-hide="menu.href || menu.sub">
+                <hr><small ng-bind="menu.title"></small>
+            </div>
+            <div class="sub">
+                <ul>
+                    <li ng-repeat="sub in menu.sub" ng-click="menu.active = $index" ng-class="menu.active == $index ? 'active' : ''">
+                        <a class="md-body-1" ng-click="vm.closeNav()" href="{{sub.href}}">
+                        <spam ng-bind="sub.title"></spam>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="fix" flex="20"></div>
+    <div class="content" flex>
+        <div ng-view class="view-animate"></div>
+        <footer>
+          <div class="copy">
+            <p class="grey-text text-darken-2"><small>©2015 Linnya Technology, Inc.  | All right reserved</small></p>    
+          </div>
+        </footer>
+    </div>
+        
+    </div>
+    
+  
+  </body>
+
+</html>

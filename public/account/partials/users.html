@@ -1,0 +1,93 @@
+<div class="partials users md-whiteframe-1dp">
+	<div class="title">
+		<h3>Network Staff</h3>
+    	<md-icon class="right" md-svg-src="assets/svg/information-outline.svg">
+	</div>
+	<md-content class="boxes" layout="row" layout-wrap>
+		<div flex="33">
+			<md-card class="new-user">
+		        <div class="md-card-image green lighten">
+		        	<md-icon md-svg-src="assets/svg/account.svg">
+		        </div>
+		        <md-card-title>
+					<md-card-title-text>
+						<div layout="row">
+							<md-input-container flex>
+								<label>First Name</label>
+								<input ng-model="vm.newUser.firstName">
+							</md-input-container>
+							<md-input-container flex>
+								<label>Last Name</label>
+								<input ng-model="vm.newUser.lastName">
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex>
+								<label>Role / Function</label>
+								<input ng-model="vm.newUser.role">
+							</md-input-container>
+						</div>
+					</md-card-title-text>
+		        </md-card-title>
+		        <md-card-content>
+					<md-list>
+						<md-list-item class="md-2-line">
+							<md-input-container flex>
+								<label>Email</label>
+								<input ng-model="vm.newUser.email">
+							</md-input-container>
+						</md-list-item>
+						<md-list-item class="md-2-line">
+						</md-list-item>
+					</md-list>
+					<md-list-item class="md-2-line">
+						<md-button>Cancel</md-button>
+						<md-button class="blue" ng-click="vm.save(vm.newUser)">Save</md-button>
+					</md-list-item>
+		        </md-card-content>
+		        <br>
+			</md-card>
+		</div>
+		<div flex="33" ng-repeat="user in users">
+			<md-card>
+		        <div class="md-card-image blue lighten">
+		        	<md-icon md-svg-src="assets/svg/account.svg">
+		        </div>
+		        <md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">{{user.firstName}} {{user.lastName}}</span>
+						<span class="md-subhead" ng-bind="user.role"></span>
+					</md-card-title-text>
+		        </md-card-title>
+		        <md-card-content>
+					<md-list flex>
+					<md-subheader class="md-no-sticky">Informations</md-subheader>
+						<md-list-item class="md-2-line">
+							<div class="md-list-item-text" layout="row">
+								<div flex="15"><md-icon md-svg-src="assets/svg/email-outline.svg"></md-icon></div>
+								<h3 flex ng-bind="user.email"></h3>
+							</div>
+						</md-list-item>
+						<md-list-item class="md-2-line">
+							<div class="md-list-item-text" layout="row">
+								<div flex="15"><md-icon md-svg-src="assets/svg/checkbox-marked-outline.svg"></md-icon></div>
+								<h3 flex ng-bind="vm.dateConverter(user.regDate)"></h3>
+							</div>
+						</md-list-item>
+					</md-list>
+					<!-- <md-subheader class="md-no-sticky">Current Connections</md-subheader>
+					<md-list-item class="md-2-line">
+						<div class="md-list-item-text conn" layout="row">
+							<div flex="15"><md-icon md-svg-src="assets/svg/apps.svg"></md-icon></div>
+							<h4 flex>Chat</h4>
+							<h4 flex>Remote</h4>
+							<h4 flex>Tickets</h4>
+						</div>
+					</md-list-item> -->
+
+		        </md-card-content>
+		        <br>
+			</md-card>
+		</div>
+	</md-content>
+</div>

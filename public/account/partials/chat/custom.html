@@ -1,0 +1,154 @@
+<div class="partials chat custom">
+	<md-content class="boxes md-whiteframe-1dp" layout="row">
+		<div flex="30">
+			<h3> Say Hello!</b></h3>
+			<p class="md-body-1">Here you can set the <b>chat's behaviour</b>. Create the right answers and enjoy it as usefull triggers!</p>
+			<p class="md-body-2"><b>Tips:</b></p>
+			<p class="md-body-1">1 - Each one of these texts have a <b>default version in english</b> language. We encorage you to change it to a style that talks like your activity.</p>
+			<p class="md-body-1">2 - <b>Pay attention</b> in each diferent moment: Don't say "<i>Chat finished</i>" in place of "<i>welcome</i>".</p>
+			<p class="md-body-1">3 - The first contact between you and your visitor in the application is a <b>very important moment.</b> So, be carefull and enjoy the opportunity.<br><br>We wish you a great experience!</p>
+		</div>
+		<div flex="10"></div>
+		<div flex>
+		<div class="card md-whiteframe-1dp" layout="column">
+				<div flex="20" class="header">
+					<img src="https://ssl.gstatic.com/psb/udc/illustration_search_color_300x160-8bbd54ae5d47fabeafea853c766639b5.png" height="160px" width="360px">
+				</div>
+				<ul>
+					<li>
+						<div class="list" ng-click="vm.header.title = !vm.header.title" layout="row" ng-hide="vm.header.title">
+							<p class="md-body-2" flex="40">Welcome!</p>
+							<p class="md-body-1" flex>
+								When you invite a visitor
+			            		<md-icon class="right" md-svg-src="assets/svg/chevron-right.svg"></md-icon>
+							</p>
+						</div>
+						<div class="content" ng-show="vm.header.title">
+						<h3>Welcome Message</h3>
+							<md-input-container>
+								<label>Hello! Welcome to our website. How may I help you?</label>
+								<input type="text">
+							</md-input-container>
+							<div>
+								<md-button class="blue" ng-click="vm.header.title = !vm.header.title">Save</md-button>
+								<md-button ng-click="vm.header.title = !vm.header.title">Cancel</md-button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list" ng-click="vm.header.text = !vm.header.text" layout="row" ng-hide="vm.header.text">
+							<p class="md-body-2" flex="40">Offline</p>
+							<p class="md-body-1" flex>
+								At night / weekends / holidays
+			            		<md-icon class="right" md-svg-src="assets/svg/chevron-right.svg"></md-icon>
+							</p>
+						</div>
+						<div class="content" ng-show="vm.header.text">
+						<h3>Offline Message</h3>
+							<md-input-container>
+								<label>We're offline right now. But you still can let us a message. We will give you a response as soon as possible. </label>
+								<input type="text">
+							</md-input-container>
+							<div>
+							<md-button class="blue" ng-click="vm.header.text = !vm.header.text">Save</md-button>
+							<md-button ng-click="vm.header.text = !vm.header.text">Cancel</md-button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list" ng-click="vm.header.title = !vm.header.title" layout="row" ng-hide="vm.header.title">
+							<p class="md-body-2" flex="40">Chat Finished</p>
+							<p class="md-body-1" flex>
+								When the attendance is over
+			            		<md-icon class="right" md-svg-src="assets/svg/chevron-right.svg"></md-icon>
+							</p>
+						</div>
+						<div class="content" ng-show="vm.header.title">
+						<h3>Chat Finished Message</h3>
+							<md-input-container>
+								<label>The chat has been finished. You still can send a message to start a new conversation.</label>
+								<input type="text">
+							</md-input-container>
+							<div>
+								<md-button class="blue" ng-click="vm.header.title = !vm.header.title">Save</md-button>
+								<md-button ng-click="vm.header.title = !vm.header.title">Cancel</md-button>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list" ng-click="vm.header.text = !vm.header.text" layout="row" ng-hide="vm.header.text">
+							<p class="md-body-1">
+								<b>New:</b> We are developing brand new triggers right now to help you in your attendances. You can know more about it by <a href="#">Clicking here</a>.
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+<!-- 			<div class="card md-whiteframe-1dp" layout="column">
+				<div flex="20" class="header">
+					<img src="https://www.gstatic.com/ac/settings/landing/privacy_takeout_600x160_549a327ff72427e34c3dc05667b6d0fe.png" height="100%" width="100%">
+				</div>
+				<ul>
+					<li>
+						<div class="list" layout="row" ng-hide="vm.header.text">
+							<p class="md-body-2" flex="60">Welcome! Sulpa qui officia deserunt </p>
+							<p class="md-body-1" flex>
+			            		<md-switch class="right" ng-model="data.cb1" ng-init="data.cb1 = true" aria-label="Make on">
+							  	</md-switch>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="list" ng-click="vm.header.text = !vm.header.text" layout="row" ng-hide="vm.header.text">
+							<p class="md-body-2" flex="40">Welcome Message</p>
+							<p class="md-body-1" flex>
+								Welcome! Sulpa qui officia deserunt 
+			            		<md-icon class="right" md-svg-src="assets/svg/chevron-right.svg"></md-icon>
+							</p>
+						</div>
+						<div class="content" ng-show="vm.header.text">
+						<h3>Lorem Ipsum</h3>
+							<md-input-container>
+								<label>Welcome Message</label>
+								<input type="text">
+							</md-input-container>
+							<div>
+							<md-button class="blue" ng-click="vm.header.text = !vm.header.text">Save</md-button>
+							<md-button ng-click="vm.header.text = !vm.header.text">Cancel</md-button>
+								
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list" ng-click="vm.header.text = !vm.header.text" layout="row" ng-hide="vm.header.text">
+							<p class="md-body-2" flex="40">Offline Message</p>
+							<p class="md-body-1" flex>
+								Sorry, sunt in culpa qui officia deserunt
+			            		<md-icon class="right" md-svg-src="assets/svg/chevron-right.svg"></md-icon>
+							</p>
+						</div>
+						<div class="content" ng-show="vm.header.text">
+						<h3>Lorem Ipsum</h3>
+							<md-input-container>
+								<label>Offline Message</label>
+								<input type="text">
+							</md-input-container>
+							<div>
+							<md-button class="blue" ng-click="vm.header.text = !vm.header.text">Save</md-button>
+							<md-button ng-click="vm.header.text = !vm.header.text">Cancel</md-button>
+								
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="list" ng-click="vm.header.text = !vm.header.text" layout="row" ng-hide="vm.header.text">
+							<p class="md-body-1">
+								A "Atividade na Web e de apps" faz com que as pesquisas sejam mais rápidas e permite experiências personalizadas no Pesquisa, Maps, Now e em outros produtos do Google. <a href="#">Saiba mais</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+ -->		</div>
+	</md-content>
+</div>

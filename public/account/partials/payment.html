@@ -1,0 +1,46 @@
+<div class="partials payment">
+	<md-content class="md-whiteframe-1dp box-inner">
+		<div class="title">
+			<h3>Payment Summary</h3>
+			<md-icon class="right" md-svg-src="assets/svg/dots-vertical.svg"></md-icon>
+			<small>Phasellus condimentum ipsum id auctor imperdie</small>
+		</div>
+		<!-- exact table from live demo -->
+		<md-table-container>
+		  <table md-table ng-model="vm.selected">
+		    <thead md-head md-on-reorder="getDesserts">
+		      <tr md-row>
+		        <th md-column><span>Date</span></th>
+		        <th md-column><span>Invoice Number</span></th>
+		        <th md-column><span>Status</span></th>
+		        <th md-column md-numeric>Amount</th>
+		      </tr>
+		    </thead>
+		    <tbody md-body>
+		      <tr md-row ng-click="vm.openDetail(123)">
+		        <td md-cell>Jul 2016</td>
+		        <td md-cell>#62358</td>
+		        <td md-cell>Pending</td>
+		        <td md-cell>$ 17,98 US</td>
+		      </tr>
+		      <tr md-row ng-click="vm.openDetail(123)">
+		        <td md-cell>Jun 2016</td>
+		        <td md-cell>#21251</td>
+		        <td md-cell>Completed</td>
+		        <td md-cell>$ 8,99 US</td>
+		      </tr>
+		      <tr md-row ng-click="vm.openDetail(123)">
+		        <td md-cell>Mar 2016</td>
+		        <td md-cell>#512312</td>
+		        <td md-cell>Completed</td>
+		        <td md-cell>$ 8,99 US</td>
+		      </tr>
+		    </tbody>
+		  </table>
+		</md-table-container>
+		<br>
+		<br>
+		<br>
+	</md-content>
+	
+</div>
