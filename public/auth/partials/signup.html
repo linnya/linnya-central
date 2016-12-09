@@ -2,21 +2,29 @@
 	
 	<div class="content md-whiteframe-z1">
 			<div layout="row">
-				<div class="slide blue" flex>
+				<div class="slide" flex>
+					<br>
+					<small><img src="assets/img/polygon-logo--.png" width="100%"></small>
+					<br>
+					<md-divider ng-if="!$last"></md-divider>
 					<br>
 					<br>
+					<h2>Get ready to<br>master your job!</h2>
 					<br>
-					<h2>Prefe a more <br>personal demo</h2>
-					<small>Sed do eiusmodtempor incididunt ut labore et dolore magna aliqua consequat.</small>
-					<h3>Lorem <b>ipsum</b> dolor sit amet, consectetur <b>adipisicing</b> elit,sed do eiusmod
-					tempor incididunt ut  <b>labore</b> et dolore magna aliqua.</h3>
 					<br>
-					<md-button>Red More</md-button>
+					<h3>Talk to visitors in real-time and<br>build more effective relationships<br>with your customers.</h3>
+					<br>
+					<br>
+					<md-divider ng-if="!$last"></md-divider>					
+					<br>
+					<small><img src="assets/img/Google_Play_logo.png" width="60%"></small>
+					<!-- <md-button>Red More</md-button> -->
 				</div>
-
+				<md-divider ></md-divider>
 				<form name="vm.form.signup" flex>
-				<h2>Signup</h2>
-				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<br>
+				<h2>Create your Account</h2>
+				<p>We've just entered into a public test phase. Enjoy it for Free!</p>
 					<br>
 					<div class="form-row" layout="row"> 
 						<md-input-container flex>
@@ -54,8 +62,9 @@
 					</div>
 					<div class="form-row" layout="row">
 						 <md-checkbox flex="10" ng-model="vm.user.agree" aria-label="Agree terms" required></md-checkbox>
-						 <p flex>I agree to Linnya Network <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+						 <p flex>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
 					</div>
+					<br>
 					<br>
 					<div class="form-row" layout="row">
 						<md-button class="blue" ng-click="vm.send(vm.user)">Register</md-button>
@@ -66,7 +75,7 @@
 	<footer>
 		<a class="opt ng-scope" href="/#/signin">Already have an account? Sign in now!</a>
 		<div class="copy">
-	    	<p class="grey-text text-darken-2"> <small>©2015 Linnya Technology, Inc.  | All right reserved</small></p>    
+	    	<p class="grey-text text-darken-2"> <small>©2017 Linnya Technology, Inc.  | All right reserved</small></p>    
 	  	</div>
 	</footer>
 </div>
