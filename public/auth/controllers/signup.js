@@ -37,7 +37,8 @@
             firebase.auth().onAuthStateChanged(function(user) {
                 if(user) {
                     widgets.toast("Logged in as: "+ user.email);
-                    widgets.redirect('account/#/dashboard');
+                    // widgets.redirect('account/#/dashboard');
+                    widgets.redirect('/#/welcome');
                 }
             });
             

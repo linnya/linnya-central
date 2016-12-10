@@ -8,7 +8,7 @@ body{
 	background: #f7f7f7;
 	width: 100%;
 }
-.partials.signup .content{
+.partials.signup .content, .partials.welcome .content{
 	margin-bottom: 0 !important;
 	position: relative;
 	width: 800px;
@@ -131,11 +131,6 @@ body{
 .partials.signin .content  .opt a.right{
     text-align: right;
 }
-.partials.welcome{
-	height: 100%;
-	background: url('../img/sandiegonight.png') !important;
-	background-size: 100% 100%;
-}
 .partials.welcome .container{
 	text-align: center;
 	display: block;
@@ -145,8 +140,11 @@ body{
 .partials.welcome .box{
 	/*background:#ECEFF1;*/
 }
+.partials.welcome .content .row{
+	padding: 8px 24px;
+}
 .partials.welcome .content{
-	padding: 8px 32px;
+	padding: 0;
 }
 .partials.welcome h2{
 	font-weight: 400;
@@ -156,6 +154,29 @@ body{
 }
 .partials.welcome .callback{
 	color: #2196F3;
+}
+.partials.welcome .code{
+	text-align: left;
+    padding: 16px;
+    overflow: auto;
+    font-size: 13px;
+    border: 0 none;
+    line-height: normal;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+.partials.welcome .plugins a+a{
+	margin-left: 8px;
+}
+.partials.welcome .disable{
+	pointer-events: none;
+}
+.partials.welcome .disable img{
+	filter: grayscale(100%);
+}
+.partials.signin.help form{
+	margin: 0;
 }
 
 password-strength md-progress-linear{

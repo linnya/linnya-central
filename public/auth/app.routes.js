@@ -15,6 +15,11 @@
 	    	title: 'Signin', 
 	    	controller: 'indexApp.signin as vm'});
 
+	    	$routeProvider.when('/help', 
+	    	{templateUrl: 'partials/help.html', 
+	    	title: 'Help', 
+	    	controller: 'indexApp.help as vm'});
+
 	    	$routeProvider.when('/invite/:accid/:temp', 
 	    	{templateUrl: 'partials/invite.html', 
 	    	title: 'Invite', 

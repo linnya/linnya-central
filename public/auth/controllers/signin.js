@@ -19,7 +19,8 @@
                 var data = snapshot.val();
                 if(data.accid === user.uid){
                     widgets.toast("Logged in as: "+ user.email);
-                    widgets.redirect('account/#/dashboard');
+                    // widgets.redirect('account/#/dashboard');
+                    widgets.redirect('/#/welcome');
                 }
                 if(data.accid !== user.uid){
                     firebase.auth().signOut();

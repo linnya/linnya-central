@@ -1,0 +1,28 @@
+<div class="partials signin help">
+	
+	<md-content class="content md-whiteframe-z1">
+		<div layout="row">
+			<form name="vm.form.signin" ng-submit="vm.resetPass(vm.user.email)">
+				<h2>Forgot Password</h2>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<br>
+				<div class="form-row">
+					<md-input-container>
+					  <label>Email</label>
+					  <input type="email" ng-model="vm.user.email" required>
+					</md-input-container>
+				</div>
+				<div class="form-row">
+					<md-button class="blue" ng-click="vm.resetPass(vm.user.email)">Reset Password</md-button>	
+				</div>
+			</form>
+			<br>
+		</div>
+	</md-content>
+	<footer>
+		<a class="opt ng-scope" href="/#/signin">Already have an account? Sign in now!</a>
+		<div class="copy">
+	    	<p class="grey-text text-darken-2"> <small>©2017 Linnya Technology, Inc.  | All right reserved</small></p>    
+	  	</div>
+	</footer>
+</div>
