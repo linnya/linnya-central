@@ -1,14 +1,18 @@
 <div class="partials signin help">
 	
 	<md-content class="content md-whiteframe-z1">
+						<br>
+					<p><img src="assets/img/polygon-logo--.png" width="65%"></p>
+					<br>
+					<md-divider ng-if="!$last"></md-divider>
 		<div layout="row">
 			<form name="vm.form.signin" ng-submit="vm.resetPass(vm.user.email)">
-				<h2>Forgot Password</h2>
-				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h2>Recovering your password</h2>
+				<p>Insert your current login e-mail below. We are going to guide you to recover your account from there.</p>
 				<br>
 				<div class="form-row">
 					<md-input-container>
-					  <label>Email</label>
+					  <label>E-mail</label>
 					  <input type="email" ng-model="vm.user.email" required>
 					</md-input-container>
 				</div>

@@ -148,9 +148,34 @@ body{
 }
 .partials.welcome h2{
 	font-weight: 400;
-	margin: 0;
-	padding: 16px;
-	border-bottom: 1px solid #ccc;
+	/*margin: 0;*/
+	/*padding: 18px;*/
+	font-size: 21px;
+	/*border-bottom: 1px solid #ccc;*/
+}
+.partials.welcome h3{
+	font-weight: 400;
+	text-align: center;
+	color: white;
+	font-size: 21px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.partials.welcome h6{
+	text-align: center;
+	color: white;
+	font-weight: 300;
+	font-size: 18px;
+	margin-bottom: 8px;
+	/*line-height: 4px;*/
+}
+.partials.welcome small{
+	text-align: center;
+}
+.partials.welcome md-toolbar{
+	background-color: #ffffff;
+	color: #bdbdbd;
+	text-align: center;
 }
 .partials.welcome .callback{
 	color: #2196F3;
@@ -163,7 +188,7 @@ body{
     border: 0 none;
     line-height: normal;
     box-sizing: border-box;
-    background-color: #f7f7f7;
+    background-color: #EEEEEE;
     border-radius: 3px;
 }
 .partials.welcome .plugins a+a{
@@ -178,6 +203,19 @@ body{
 .partials.signin.help form{
 	margin: 0;
 }
+.partials.signin.help h2{
+	text-align: center;
+	font-weight: 400;
+	color: #414141;
+}
+.partials.signin.help p{
+	font-weight: 400;
+	text-align: center;
+	color: #616161;
+}
+.partials.signin.help small{
+	text-align: center;
+} 
 
 password-strength md-progress-linear{
 	margin-top: 20px;
@@ -210,6 +248,9 @@ password-strength md-progress-linear.bg-100 ._md-bar{
 .blue.lighten{
 	background: #B3E5FC;
 }
+.blue.lighten-2{
+	background: #0277BD;
+}
 .red.lighten{
 	background: #FFCDD2;
 }
@@ -221,6 +262,9 @@ password-strength md-progress-linear.bg-100 ._md-bar{
 }
 .blue{
 	background: #2196F3;
+}
+.blue.darken{
+	background: #0D47A1;
 }
 .yellow{
 	background: #FDD835;
