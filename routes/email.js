@@ -1,5 +1,6 @@
 var Firebase = require("firebase");
 var request = require('request');
+var moment = require('moment');
 
 function getAccountDetails(accid, callback) {
 
@@ -22,6 +23,36 @@ exports.offline = function (req, res) {
  	});
  	var obj = {error: false, number: 200, result: "Fooo bar"};
     res.status(200).json(obj);
+};
+
+exports.finish = function (req, res) {
+ 	getAccountDetails(req.body.accid, function(account) {
+    var msgsList = [];
+		var obj = req.body;
+
+    for(var i in obj){
+      if(obj[i].by === 'guest' || obj[i].by === 'agent'){
+        if(obj[i].by === 'guest') var name = "You";
+        if(obj[i].by === 'agent') var name = obj.agentFullName;
+
+        if(obj[i].type === 'text') msgsList.push('<div style="margin:8px 0"><p style="margin:4px 0"><b>'+name+':</b><br>'
+          +obj[i].content+'</p><small>'+moment(obj[i].time).format('LT')+'</small></div>');
+
+        if(obj[i].link) msgsList.push('<div><p><b>'+name+':</b><br>'
+          +obj[i].link+'</p><small>'+moment(obj[i].time).format('LT')+'</small></div>');
+      }
+    }
+    var data = {};
+    data.chatHistory = msgsList.toString().replace(/div>,<div/g, 'div><div');;
+    data.account = account;
+    data.email = obj.customerEmail;
+ 		require('../widgets/email').emailByTemplate(data, "Chat log by linnya-chat", 'finish.html');
+
+ 	});
+
+ 	var obj = {error: false, number: 200, result: "Fooo bar"};
+  res.status(200).json(obj);
+
 };
 
 exports.emailByTemplate = function (obj, subject, template) {

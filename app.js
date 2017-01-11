@@ -57,6 +57,7 @@ app.get('/api/v1/public/temp/:accid/:hash', require('./routes/widgets').getTemp)
 app.get('/api/v1/public/track', require('./routes/widgets').track);
 
 app.post('/api/v1/public/email/offline', require('./routes/email').offline);
+app.post('/api/v1/public/email/finish', require('./routes/email').finish);
 
 app.post('/api/v1/account/agent/temp/:accid', require('./routes/agent').request);
 app.post('/api/v1/account/agent/confirm/:accid/:temp', require('./routes/agent').confirm);

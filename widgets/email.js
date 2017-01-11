@@ -42,6 +42,7 @@ function replace(data, obj) {
     termsCustomLink :"http://www.google.com.br",
     privacyCustomLink :"http://www.google.com.br",
     customerName : obj.name,
+    chatHistory : obj.chatHistory,
     customerfirstName : obj.firstName,
     customerlastName : obj.lastName,
     customerEmail : obj.email,
@@ -57,7 +58,8 @@ function replace(data, obj) {
   var reg = new RegExp(search, "g");
 
   data = data.replace(reg, function(matched){
-    return mapObj[matched];
+    if(mapObj[matched]) return mapObj[matched];
+    if(!mapObj[matched]) return '';
   });
 
   return data;
@@ -99,7 +101,6 @@ exports.emailByTemplate = function(obj, subject, template) {
 
   getFile('./widgets/emails/'+template, obj, function(data) {
       mailOptions.html = data;
-
       transporter.sendMail(mailOptions, function(error, info){
           if(error){
               console.log(error);

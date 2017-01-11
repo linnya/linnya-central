@@ -38,16 +38,17 @@ exports.track = function (req, res) {
 
 function geoplugin(req, callback){
   var ua = parser(req.headers['user-agent']);
-  var ip = '179.105.104.127';
+  if(req.ip === '::1') var ip = '179.105.125.187';
+  if(req.ip !== '::1') var ip = req.ip;
 
-  request('http://www.geoplugin.net/json.gp?ip='+ip, function (error, response, body) {
+  request('http://freegeoip.net/json/'+ip, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       var data = JSON.parse(body);
       var obj = {};
-      var teste = data.geoplugin_region.toString();
+      var teste = data.region_code.toString();
 
       obj.device = {OS:ua.os.name+' '+ ua.os.version, browser: ua.browser.name+ ' '+ ua.browser.major};
-      obj.address = {city: data.geoplugin_city, region: entities.decode(teste), country: emojiFlags.countryCode(data.geoplugin_countryCode), currency: data.geoplugin_currencyCode, currencyUTF8: data.geoplugin_currencySymbol_UTF8};
+      obj.address = {city: data.city, region: data.region_name, country: emojiFlags.countryCode(data.country_code)};
       callback(obj);
     }
   });
