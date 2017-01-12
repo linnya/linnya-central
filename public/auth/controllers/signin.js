@@ -15,8 +15,11 @@
 
         function checkAccount(user) {
             var ref = firebase.database().ref('owner').child(user.uid);
+
             ref.once('value', function(snapshot) {
                 var data = snapshot.val();
+                console.log(data);
+                
                 if(data.accid === user.uid){
                     widgets.toast("Logged in as: "+ user.email);
                     // widgets.redirect('account/#/dashboard');

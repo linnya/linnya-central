@@ -1,4 +1,6 @@
 var nodemailer = require('nodemailer');
+var Firebase = require("firebase");
+var ref = new Firebase("https://linnya.firebaseio.com");
 var fs = require('fs');
 var moment = require('moment');
 
@@ -41,10 +43,11 @@ function replace(data, obj) {
     companyWebsite : obj.account.website,
     termsCustomLink :"http://www.google.com.br",
     privacyCustomLink :"http://www.google.com.br",
-    customerName : obj.name,
     chatHistory : obj.chatHistory,
-    customerfirstName : obj.firstName,
-    customerlastName : obj.lastName,
+    agentFullName : obj.agentFullName,
+    agentFirstName : obj.agentFirstName,
+    agentLastName : obj.agentFirstName,
+    customerName : obj.customerName,
     customerEmail : obj.email,
     customDate : dateConverter(),
     time : timeConverter(),
@@ -88,11 +91,19 @@ exports.offline = function(obj, to) {
               console.log(error);
           }else{
               console.log('Message sent: ' + info.response);
+              saveFirebaseLog(obj, info.response);
           }
       });
   });
+
+  function saveFirebaseLog(data, log) {
+    var obj = {email: data.email, time: Firebase.ServerValue.TIMESTAMP, log: log};
+    var fireMsg = ref.child('offline_msg').child(data.accid);
+    fireMsg.push(obj);
+  }
 };
 exports.emailByTemplate = function(obj, subject, template) {
+
   var mailOptions = {
       from: 'Linnya network <no-reply@linnya.com',
       to: obj.email, // list of receivers

@@ -33,7 +33,7 @@ exports.finish = function (req, res) {
     for(var i in obj){
       if(obj[i].by === 'guest' || obj[i].by === 'agent'){
         if(obj[i].by === 'guest') var name = "You";
-        if(obj[i].by === 'agent') var name = obj.agentFullName;
+        if(obj[i].by === 'agent') var name = obj.agentFirstName +' '+ obj.agentLastName;
 
         if(obj[i].type === 'text') msgsList.push('<div style="margin:8px 0"><p style="margin:4px 0"><b>'+name+':</b><br>'
           +obj[i].content+'</p><small>'+moment(obj[i].time).format('LT')+'</small></div>');
@@ -42,12 +42,11 @@ exports.finish = function (req, res) {
           +obj[i].link+'</p><small>'+moment(obj[i].time).format('LT')+'</small></div>');
       }
     }
-    var data = {};
-    data.chatHistory = msgsList.toString().replace(/div>,<div/g, 'div><div');;
-    data.account = account;
-    data.email = obj.customerEmail;
- 		require('../widgets/email').emailByTemplate(data, "Chat log by linnya-chat", 'finish.html');
-
+    obj.chatHistory = msgsList.toString().replace(/div>,<div/g, 'div><div');;
+    obj.account = account;
+    // DEFAULT EMAIL
+    obj.email = obj.customerEmail;
+ 		require('../widgets/email').emailByTemplate(obj, "Chat log by linnya-chat", 'finish.html');
  	});
 
  	var obj = {error: false, number: 200, result: "Fooo bar"};
