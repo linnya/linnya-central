@@ -71,7 +71,7 @@ var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
         user: 'linnya.network@gmail.com',
-        pass: 'linnya2000'
+        pass: '####'
     }
 });
 
