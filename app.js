@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 var FirebaseTokenGenerator = require("firebase-token-generator");
-var tokenGenerator = new FirebaseTokenGenerator("lPE22aBtXypvNkk8jtIIhLmQfUoKCPqfMyShjP0i");
+var tokenGenerator = new FirebaseTokenGenerator("");
 var Firebase = require("firebase");
 
 var Entities = require('html-entities').AllHtmlEntities;
